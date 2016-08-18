@@ -28,6 +28,17 @@ namespace MyWeather.ViewModels
             }
         }
 
+		string imperialLabel = "Use Imperial? (Yes)";
+		public string ImperialLabel
+		{
+			get { return imperialLabel; }
+			set
+			{
+				imperialLabel = value;
+				OnPropertyChanged();
+			}
+		}
+
         bool useGPS;
         public bool UseGPS
         {
@@ -49,6 +60,8 @@ namespace MyWeather.ViewModels
             set
             {
                 isImperial = value;
+				var yesNo = isImperial ? "Yes" : "No";
+				ImperialLabel = $"Use Imperial? ({yesNo})";
                 OnPropertyChanged();
                 Settings.IsImperial = value;
             }
