@@ -28,7 +28,7 @@ namespace MyWeather.ViewModels
             }
         }
 
-		string imperialLabel = "Use Imperial? (Yes)";
+		string imperialLabel = string.Format("Use Imperial? ({0})", Settings.IsImperial ? "Yes" : "No");
 		public string ImperialLabel
 		{
 			get { return imperialLabel; }
@@ -60,9 +60,11 @@ namespace MyWeather.ViewModels
             set
             {
                 isImperial = value;
+
 				var yesNo = isImperial ? "Yes" : "No";
 				ImperialLabel = $"Use Imperial? ({yesNo})";
-                OnPropertyChanged();
+                
+				OnPropertyChanged();
                 Settings.IsImperial = value;
             }
         }
