@@ -5,25 +5,8 @@
              Title="Weather">
     <StackLayout Padding="10" Spacing="10">
       
-      <Entry Text="{Binding Location}"/>
+		<Label Text="TODO: Add view here!!!" />
 
-      <StackLayout Orientation="Horizontal">
-        <Label Text="Use Imperial?" VerticalTextAlignment="Center"/>
-        <Switch IsToggled="{Binding IsImperial}"/>
-      </StackLayout>
-
-      <StackLayout Orientation="Horizontal">
-        <Label Text="Use GPS?" VerticalTextAlignment="Center"/>
-        <Switch IsToggled="{Binding UseGPS}"/>
-      </StackLayout>
-
-      <Button Text="Get Weather" Command="{Binding GetWeatherCommand}"/>
-
-      <Label Text="{Binding Temp}" FontSize="30"/>
-      <Label Text="{Binding Condition}"/>
-
-      <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-      
     </StackLayout>
 </ContentPage>
 
