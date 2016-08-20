@@ -4,8 +4,20 @@
              x:Class="MyWeather.View.WeatherView"
              Title="Weather">
     <StackLayout Padding="10" Spacing="10">
-      
-        <Label Text="TODO: Create the view!!!" VerticalTextAlignment="Center"/>
+
+		<Entry Text="{Binding Location}" />
+
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Use Imperial" />
+			<Switch IsToggled="{Binding IsImperial}" HorizontalOptions="EndAndExpand"/>
+		</StackLayout>
+
+		<Button Text="Get Weather" Command="{Binding GetWeatherCommand}" />
+
+		<Label Text="{Binding Temp}" FontSize="30" />
+		<Label Text="{Binding Condition}" />
+
+		<ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
 
     </StackLayout>
 </ContentPage>
