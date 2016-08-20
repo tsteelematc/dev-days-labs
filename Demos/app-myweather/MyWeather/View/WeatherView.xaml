@@ -12,6 +12,11 @@
 			<Switch IsToggled="{Binding IsImperial}" HorizontalOptions="EndAndExpand" />
 		</StackLayout>
 
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Use GPS" />
+			<Switch IsToggled="{Binding UseGPS}" HorizontalOptions="EndAndExpand" />
+		</StackLayout>
+
 		<Button Text="Get Weather Dummy" Command="{Binding GetWeatherCommand}" />
 
 		<Label Text="{Binding Temp}" FontSize="30" />

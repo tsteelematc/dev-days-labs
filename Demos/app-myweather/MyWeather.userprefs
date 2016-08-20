@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="MyWeather.Droid/MyWeather.Android.csproj">
+﻿<Properties StartupItem="MyWeather.iOS/MyWeather.iOS.csproj">
   <MonoDevelop.Ide.ItemProperties.MyWeather.Android PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.ItemProperties.MyWeather.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1C64D91B-B375-4F53-A706-904686A5A68A" />
 </Properties>
