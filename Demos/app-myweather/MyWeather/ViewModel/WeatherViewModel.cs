@@ -118,18 +118,8 @@ namespace MyWeather.ViewModels
                 WeatherRoot weatherRoot = null;
                 var units = IsImperial ? Units.Imperial : Units.Metric;
 
-
-                if (UseGPS)
-                {
-                    var gps = await CrossGeolocator.Current.GetPositionAsync(10000);
-                    weatherRoot = await WeatherService.GetWeather(gps.Latitude, gps.Longitude, units);
-                }
-                else
-                {
-                    //Get weather by city
-                    weatherRoot = await WeatherService.GetWeather(Location.Trim(), units);
-                }
-                
+				//Get weather by city
+                weatherRoot = await WeatherService.GetWeather(Location.Trim(), units);
 
                 //Get forecast based on cityId
                 Forecast = await WeatherService.GetForecast(weatherRoot.CityId, units);
@@ -137,8 +127,6 @@ namespace MyWeather.ViewModels
                 var unit = IsImperial ? "F" : "C";
                 Temp = $"Temp: {weatherRoot?.MainWeather?.Temperature ?? 0}°{unit}";
                 Condition = $"{weatherRoot.Name}: {weatherRoot?.Weather?[0]?.Description ?? string.Empty}";
-
-                CrossTextToSpeech.Current.Speak(Temp + " " + Condition);
             }
             catch (Exception ex)
             {
